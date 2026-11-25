@@ -449,9 +449,9 @@ button { font-family: inherit; }
     display: inline-block;
     color: var(--accent);
     font-weight: 600;
-    transition: opacity 0.32s ease, transform 0.32s ease;
+    transition: translate 0.32s ease, clip-path 0.32s ease;
 }
-.rotator.is-out { opacity: 0; transform: translateY(-7px); }
+.rotator.is-out { translate: 0 -7px; clip-path: inset(0 0 100% 0); }
 
 .hero-lead {
     margin-top: 20px;
@@ -1240,7 +1240,9 @@ button { font-family: inherit; }
     display: flex;
     align-items: center;
     gap: 15px;
-    padding: 16px 18px;
+    padding: 17px 19px;
+    min-height: 84px;
+    box-sizing: border-box;
     border: 1px solid var(--line);
     border-radius: 14px;
     background: var(--surface);
@@ -1248,9 +1250,9 @@ button { font-family: inherit; }
 }
 .contact-list li:hover { border-color: var(--line-2); }
 .contact-icon {
-    width: 42px;
-    height: 42px;
-    flex: 0 0 42px;
+    width: 44px;
+    height: 44px;
+    flex: 0 0 44px;
     display: grid;
     place-items: center;
     border-radius: 12px;
@@ -1284,6 +1286,8 @@ button { font-family: inherit; }
     align-items: center;
     gap: 15px;
     padding: 17px 19px;
+    min-height: 84px;
+    box-sizing: border-box;
     border: 1px solid var(--line);
     border-radius: 14px;
     background: var(--surface);
@@ -1403,12 +1407,55 @@ button { font-family: inherit; }
 
 /* ------------------------------ REVEAL ------------------------------ */
 .js .reveal {
-    opacity: 0;
-    transform: translateY(22px);
-    transition: opacity 0.65s var(--ease), transform 0.65s var(--ease);
-    will-change: opacity, transform;
+    translate: 0 26px;
+    scale: 0.985;
+    transition: translate 0.7s var(--ease), scale 0.7s var(--ease);
+    will-change: translate;
 }
-.js .reveal.is-visible { opacity: 1; transform: none; }
+.js .reveal.reveal-left { translate: -28px 0; }
+.js .reveal.reveal-right { translate: 28px 0; }
+.js .reveal.is-visible {
+    translate: none;
+    scale: 1;
+}
+
+/* --------- CASCADA DE PALABRAS EN TÍTULOS (por scroll / touch) -------- */
+.word { display: inline-block; }
+
+.section-title.has-words .word {
+    clip-path: inset(0 0 100% 0);
+    transform: translateY(0.5em) rotate(2deg);
+    transition: clip-path 0.55s var(--ease), transform 0.7s var(--ease);
+    transition-delay: calc(var(--wi) * 55ms);
+}
+.is-visible .section-title.has-words .word {
+    clip-path: inset(0 0 0 0);
+    transform: none;
+}
+
+.hero-name.has-words .word {
+    animation: wordIn 0.9s var(--ease) both;
+    animation-delay: calc(var(--wi) * 95ms + 140ms);
+}
+@keyframes wordIn {
+    from { clip-path: inset(0 0 100% 0); transform: translateY(0.55em) rotate(3deg); }
+    to { clip-path: inset(0 0 0 0); transform: none; }
+}
+
+.section-title em { position: relative; }
+.section-title em::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: -0.08em;
+    height: 2px;
+    background: var(--accent);
+    transform: scaleX(0);
+    transform-origin: left center;
+    transition: transform 0.9s var(--ease) 0.3s;
+}
+.is-visible .section-title em::after { transform: scaleX(1); }
 
 /* ------------------------------ RESPONSIVE ------------------------------ */
 @media (max-width: 1180px) {
@@ -1501,5 +1548,8 @@ button { font-family: inherit; }
         animation-iteration-count: 1 !important;
         transition-duration: 0.001ms !important;
     }
-    .js .reveal { opacity: 1; transform: none; }
+    .js .reveal { translate: none; scale: 1; }
+    .has-words .word { clip-path: none !important; transform: none !important; }
+    .rotator.is-out { clip-path: none; translate: none; }
+    .section-title em::after { transform: scaleX(1); }
 }

@@ -1,10 +1,62 @@
 /* ==========================================================================
-   SEBASTIÁN BELTRÁN — PORTFOLIO 2026
+   SEBASTIAN BELTRAN — PORTFOLIO 2026
    ========================================================================== */
 (function () {
     'use strict';
 
     var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+    /* ------------------------------------------------------------------
+       0. CASCADA DE PALABRAS Y ANIMACIONES POR SCROLL (sin mouse)
+    ------------------------------------------------------------------ */
+    function splitWords(el) {
+        if (el.dataset.wordsReady) return;
+        el.dataset.wordsReady = '1';
+        var i = 0;
+
+        function walk(node) {
+            Array.prototype.slice.call(node.childNodes).forEach(function (child) {
+                if (child.nodeType === 3) {
+                    if (!child.nodeValue.trim()) return;
+                    var frag = document.createDocumentFragment();
+                    child.nodeValue.split(/(\s+)/).forEach(function (part) {
+                        if (!part) return;
+                        if (/^\s+$/.test(part)) {
+                            frag.appendChild(document.createTextNode(part));
+                        } else {
+                            var span = document.createElement('span');
+                            span.className = 'word';
+                            span.style.setProperty('--wi', i++);
+                            span.textContent = part;
+                            frag.appendChild(span);
+                        }
+                    });
+                    node.replaceChild(frag, child);
+                } else if (child.nodeType === 1 && child.tagName !== 'BR') {
+                    walk(child);
+                }
+            });
+        }
+
+        walk(el);
+        el.classList.add('has-words');
+    }
+
+    document.querySelectorAll('.hero-name, .section-title').forEach(splitWords);
+
+    // Cada bloque de contacto entra escalonado al llegar por scroll
+    document.querySelectorAll('.contact-list li, .action-card').forEach(function (el, i) {
+        el.classList.add('reveal');
+        el.style.transitionDelay = (i % 4) * 85 + 'ms';
+    });
+
+    // Parallax sutil de la media del hero: responde al dedo, no al mouse
+    var heroFrame = document.querySelector('.hero-media .media-frame');
+    function heroParallax() {
+        if (!heroFrame || reduceMotion) return;
+        var y = Math.min(Math.max(window.scrollY, 0), 900) * 0.045;
+        heroFrame.style.transform = 'translateY(' + y.toFixed(1) + 'px)';
+    }
 
     /* ------------------------------------------------------------------
        1. REVEAL AL HACER SCROLL (con stagger por grilla)
@@ -94,6 +146,7 @@
                 updateSpy();
                 revealPassedElements();
                 settlePassedCounts();
+                heroParallax();
                 ticking = false;
             });
             ticking = true;
@@ -196,7 +249,7 @@
     ------------------------------------------------------------------ */
     var rotator = document.getElementById('roleRotator');
     if (rotator && !reduceMotion) {
-        var roles = ['Full Stack', 'de Software', 'Web', 'de Datos'];
+        var roles = ['Full Stack', 'Node.js', 'JavaScript', 'Firebase', 'Supabase', 'APIs REST', 'Render'];
         var roleIndex = 0;
         setInterval(function () {
             rotator.classList.add('is-out');
@@ -490,6 +543,7 @@
     applyFilters();
     revealPassedElements();
     settlePassedCounts();
+    heroParallax();
     updateProgress();
     updateSpy();
 })();
