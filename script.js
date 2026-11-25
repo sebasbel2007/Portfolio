@@ -14,7 +14,7 @@
     if (reduceMotion || !('IntersectionObserver' in window)) {
         revealEls.forEach(function (el) { el.classList.add('is-visible'); });
     } else {
-        document.querySelectorAll('.grid, .about-grid').forEach(function (grid) {
+        document.querySelectorAll('.grid, .about-intro, .about-cols').forEach(function (grid) {
             Array.prototype.forEach.call(grid.children, function (child, i) {
                 if (child.classList.contains('reveal')) {
                     child.style.transitionDelay = Math.min(i * 70, 210) + 'ms';
@@ -93,6 +93,7 @@
                 updateProgress();
                 updateSpy();
                 revealPassedElements();
+                settlePassedCounts();
                 ticking = false;
             });
             ticking = true;
@@ -155,11 +156,18 @@
     }
 
     var nums = document.querySelectorAll('.num[data-count]');
+
+    function startCount(el) {
+        if (el.dataset.done) return;
+        el.dataset.done = '1';
+        countUp(el);
+    }
+
     if ('IntersectionObserver' in window) {
         var numObserver = new IntersectionObserver(function (entries) {
             entries.forEach(function (entry) {
                 if (entry.isIntersecting) {
-                    countUp(entry.target);
+                    startCount(entry.target);
                     numObserver.unobserve(entry.target);
                 }
             });
@@ -167,6 +175,20 @@
         nums.forEach(function (n) { numObserver.observe(n); });
     } else {
         nums.forEach(function (n) { n.textContent = n.dataset.count; });
+    }
+
+    // Respaldo ante scrolls bruscos: si el observer no muestreó el elemento,
+    // lo dejamos animar igual para que nunca quede un "0" en pantalla.
+    var pendingCounts = Array.prototype.slice.call(nums);
+    function settlePassedCounts() {
+        pendingCounts = pendingCounts.filter(function (el) {
+            if (el.dataset.done) return false;
+            if (el.getBoundingClientRect().top < window.innerHeight) {
+                startCount(el);
+                return false;
+            }
+            return true;
+        });
     }
 
     /* ------------------------------------------------------------------
@@ -467,6 +489,7 @@
     ------------------------------------------------------------------ */
     applyFilters();
     revealPassedElements();
+    settlePassedCounts();
     updateProgress();
     updateSpy();
 })();

@@ -1,5 +1,5 @@
 
-                    Mi enfoque en el desarrollo no está en la superficie, sino en el <span>motor que hace que las cosas sucedan</span>. 
+                    Mi enfoque en el desarrollo no está en la superficie, sino en la parte profunda que hace que las cosas sucedan. 
                     Soy un apasionado de la lógica pura, la estructuración de algoritmos complejos y la integridad de los datos. 
                     Como técnico, disfruto resolver desafíos donde la eficiencia del procesamiento y la seguridad de la información son la prioridad.
                 </p>
