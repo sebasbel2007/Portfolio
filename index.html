@@ -1,0 +1,833 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sebastian Beltran — Desarrollador Full Stack</title>
+    <meta name="description" content="Portfolio de Sebastian Beltran, desarrollador full stack desde Berazategui. 14 proyectos con repositorio y app en vivo: sistemas con servidor, apps estáticas y proyectos personales.">
+    <meta name="author" content="Sebastian Beltran">
+    <meta name="theme-color" content="#0c0e11">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+
+    <script>document.documentElement.classList.add('js');</script>
+</head>
+<body>
+
+    <div class="scroll-progress" aria-hidden="true"><span id="progressBar"></span></div>
+    <a href="#proyectos" class="skip-link">Ir a los proyectos</a>
+
+    <!-- ============================ SIDEBAR ============================ -->
+    <aside class="sidebar" id="sidebar">
+        <div class="sidebar-head">
+            <a href="#inicio" class="brand">
+                <span class="brand-text">
+                    <strong>Sebastian Beltran</strong>
+                    <small>Desarrollador Full Stack</small>
+                </span>
+            </a>
+            <button class="drawer-close" id="drawerClose" aria-label="Cerrar menú"><i class="fa-solid fa-xmark"></i></button>
+        </div>
+
+        <nav class="side-nav" aria-label="Navegación principal">
+            <p class="nav-label">Menú</p>
+            <a href="#inicio" class="nav-item is-active" data-nav="inicio">
+                <i class="fa-solid fa-house"></i><span>Inicio</span>
+            </a>
+            <a href="#sobre-mi" class="nav-item" data-nav="sobre-mi">
+                <i class="fa-solid fa-user"></i><span>Sobre mí</span>
+            </a>
+
+            <p class="nav-label">Proyectos <em class="nav-total" id="navTotal">14</em></p>
+            <a href="#servidor" class="nav-item" data-nav="servidor">
+                <span class="nav-dot nav-dot--render"></span><span>Con servidor</span>
+                <em class="nav-count" data-count-for="servidor">0</em>
+            </a>
+            <a href="#estaticos" class="nav-item" data-nav="estaticos">
+                <span class="nav-dot nav-dot--static"></span><span>Estáticos</span>
+                <em class="nav-count" data-count-for="estaticos">0</em>
+            </a>
+            <a href="#personales" class="nav-item" data-nav="personales">
+                <span class="nav-dot nav-dot--personal"></span><span>Personales</span>
+                <em class="nav-count" data-count-for="personales">0</em>
+            </a>
+
+            <p class="nav-label">Contacto</p>
+            <a href="#contacto" class="nav-item" data-nav="contacto">
+                <i class="fa-solid fa-envelope"></i><span>Escribime</span>
+            </a>
+        </nav>
+
+        <div class="sidebar-foot">
+            <a class="btn btn-cv" href="./img/CV_Sebastian_Beltran_2026.pdf" download>
+                <i class="fa-solid fa-file-arrow-down"></i> CV 2026
+            </a>
+            <div class="side-socials">
+                <a href="https://github.com/sebasbel2007" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+                <a href="https://www.linkedin.com/in/sebastian-beltran-44b551401/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+                <a href="https://www.instagram.com/sebastian_l07/" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+            </div>
+        </div>
+    </aside>
+    <div class="drawer-overlay" id="drawerOverlay" hidden></div>
+
+    <!-- ============================ BARRA MÓVIL ============================ -->
+    <header class="mobile-bar">
+        <a href="#inicio" class="brand">
+            <span class="brand-text"><strong>Sebastian Beltran</strong></span>
+        </a>
+        <button class="menu-toggle" id="menuToggle" aria-label="Abrir menú" aria-expanded="false" aria-controls="sidebar">
+            <i class="fa-solid fa-bars"></i>
+        </button>
+    </header>
+
+    <main class="main">
+
+        <!-- ============================ HERO ============================ -->
+        <section id="inicio" class="section hero">
+            <div class="hero-grid">
+                <div class="hero-copy">
+                    <p class="eyebrow"><span class="status-dot"></span> Disponible para proyectos · Berazategui, AR</p>
+
+                    <h1 class="hero-name">Sebastian<br><em>Beltran</em></h1>
+
+                    <p class="hero-role">Desarrollador <span class="rotator" id="roleRotator">Full Stack</span></p>
+
+                    <p class="hero-lead">
+                        Construyo sistemas completos: backend, base de datos e interfaz trabajando como una sola pieza.
+                        Me interesa el motor que hace que las cosas funcionen, no solo lo que se ve.
+                    </p>
+
+                    <div class="hero-actions">
+                        <a class="btn btn-primary" href="#proyectos">Ver proyectos <i class="fa-solid fa-arrow-down"></i></a>
+                        <a class="btn btn-outline" href="https://github.com/sebasbel2007" target="_blank" rel="noopener noreferrer">
+                            <i class="fa-brands fa-github"></i> Ver GitHub
+                        </a>
+                        <a class="btn btn-outline" href="./img/CV_Sebastian_Beltran_2026.pdf" download>
+                            <i class="fa-solid fa-file-arrow-down"></i> Descargar CV 2026
+                        </a>
+                    </div>
+
+                    <dl class="hero-stats">
+                        <div class="stat">
+                            <dt><span class="num" data-count="14">0</span></dt>
+                            <dd>proyectos publicados</dd>
+                        </div>
+                        <div class="stat">
+                            <dt><span class="num" data-count="7">0</span><span class="suffix">+</span></dt>
+                            <dd>años de formación</dd>
+                        </div>
+                        <div class="stat">
+                            <dt><span class="num" data-count="5">0</span></dt>
+                            <dd>apps con servidor en la nube</dd>
+                        </div>
+                    </dl>
+                </div>
+
+                <!-- PNG del video: cuando tengas la URL la conecto con un solo atributo -->
+                <figure class="hero-media reveal" data-video="">
+                    <div class="media-frame">
+                        <img src="./img/video.png" alt="Vista previa del video de presentación de Sebastian Beltran">
+                        <span class="media-tag"><i class="fa-solid fa-clapperboard"></i> Video de presentación</span>
+                    </div>
+                    <figcaption>Un minuto sobre cómo trabajo, qué resuelvo y cómo encaro cada proyecto.</figcaption>
+                </figure>
+            </div>
+        </section>
+
+        <!-- ============================ SOBRE MÍ ============================ -->
+        <section id="sobre-mi" class="section">
+            <header class="section-head reveal">
+                <p class="section-kicker">Sobre mí</p>
+                <h2 class="section-title">El motor por detrás <em>de la interfaz</em></h2>
+                <p class="section-lead">
+                    Mi enfoque en el desarrollo no está en la superficie, sino en el motor que hace que las cosas sucedan.
+                    Soy un apasionado de la lógica pura, la estructuración de algoritmos complejos y la integridad de los datos.
+                    Disfruto resolver desafíos donde la eficiencia del procesamiento y la seguridad de la información son la prioridad.
+                </p>
+            </header>
+
+            <div class="about-grid">
+                <article class="info-card reveal">
+                    <span class="info-icon"><i class="fa-solid fa-chart-line"></i></span>
+                    <h3>Trayectoria</h3>
+                    <p>
+                        Más de 3 años de formación constante en programación y electrónica, con proyectos de escala real
+                        que integraron hardware y software. Mi fuerte no es solo escribir código, sino entender la lógica
+                        detrás de cada sistema para que la solución sea sólida de punta a punta.
+                    </p>
+                    <span class="info-num">01</span>
+                </article>
+
+                <article class="info-card reveal">
+                    <span class="info-icon"><i class="fa-solid fa-graduation-cap"></i></span>
+                    <h3>Estudios</h3>
+                    <p>
+                        Curso el 7mo año en la Escuela de Educación Secundaria Técnica N°5, con formación complementada
+                        en HTML &amp; CSS moderno, lógica de programación con Python y gestión de bases de datos
+                        relacionales con MySQL y PHP.
+                    </p>
+                    <span class="info-num">02</span>
+                </article>
+
+                <article class="info-card reveal">
+                    <span class="info-icon"><i class="fa-solid fa-microchip"></i></span>
+                    <h3>Habilidades clave</h3>
+                    <ul class="skill-list">
+                        <li><i class="fa-solid fa-check"></i> Backend: PHP / Python / MySQL</li>
+                        <li><i class="fa-solid fa-check"></i> Frontend: HTML / CSS / JavaScript</li>
+                        <li><i class="fa-solid fa-check"></i> Control de hardware (Arduino Mega)</li>
+                        <li><i class="fa-solid fa-check"></i> UI/UX y storytelling técnico</li>
+                        <li><i class="fa-solid fa-check"></i> Gestión bajo presión y adaptabilidad</li>
+                    </ul>
+                    <span class="info-num">03</span>
+                </article>
+            </div>
+        </section>
+
+        <!-- ============================ PROYECTOS ============================ -->
+        <section id="proyectos" class="section">
+            <header class="section-head reveal">
+                <p class="section-kicker">Proyectos</p>
+                <h2 class="section-title">14 proyectos, <em>todos en vivo</em></h2>
+                <p class="section-lead">
+                    Cada tarjeta tiene su repositorio y su app funcionando. Si la app necesita cuenta,
+                    las credenciales están adentro de la misma tarjeta.
+                </p>
+                <a class="section-link" href="https://github.com/sebasbel2007?tab=repositories" target="_blank" rel="noopener noreferrer">
+                    <i class="fa-brands fa-github"></i> Ver todos mis repositorios en GitHub <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                </a>
+            </header>
+
+            <div class="toolbar" id="toolbar">
+                <div class="search-box">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                    <input type="search" id="searchInput" placeholder="Buscar por nombre, tecnología o tipo…" aria-label="Buscar proyectos" autocomplete="off">
+                    <button class="search-clear" id="searchClear" hidden aria-label="Limpiar búsqueda"><i class="fa-solid fa-xmark"></i></button>
+                </div>
+
+                <div class="chips" role="group" aria-label="Filtrar proyectos por categoría">
+                    <button class="chip is-active" data-filter="todos">Todos <em data-chip-count="todos">14</em></button>
+                    <button class="chip" data-filter="servidor">Con servidor <em data-chip-count="servidor">5</em></button>
+                    <button class="chip" data-filter="estaticos">Estáticos <em data-chip-count="estaticos">4</em></button>
+                    <button class="chip" data-filter="personales">Personales <em data-chip-count="personales">2</em></button>
+                    <button class="chip" data-filter="viejos">Viejos <em data-chip-count="viejos">3</em></button>
+                </div>
+
+                <p class="result-count" id="resultCount" aria-live="polite">14 de 14 proyectos</p>
+            </div>
+
+            <!-- ---------- CON SERVIDOR (RENDER) ---------- -->
+            <div class="proj-block" id="servidor" data-block>
+                <header class="block-head reveal">
+                    <div class="block-head-text">
+                        <p class="block-kicker"><span class="nav-dot nav-dot--render"></span> Con servidor</p>
+                        <h3>Apps desplegadas en Render</h3>
+                        <p>Backend propio con base de datos corriendo en la nube. La primera carga puede tardar unos segundos mientras el servidor despierta.</p>
+                    </div>
+                    <span class="block-count" data-block-count>5 proyectos</span>
+                </header>
+
+                <div class="grid grid-2">
+                    <article class="card reveal" data-cat="servidor" data-search="rotiseria qr pedidos cocina caja tv roles javascript node backend sistema">
+                        <div class="card-media">
+                            <img src="./img%20app/Rotiseria-qr.png" alt="Captura del sistema Rotisería QR" loading="lazy">
+                            <span class="host-badge host-render"><i class="fa-solid fa-server"></i> Render</span>
+                            <button class="zoom-btn" aria-label="Ampliar imagen de Rotisería QR"><i class="fa-solid fa-expand"></i></button>
+                        </div>
+                        <div class="card-body">
+                            <div class="card-title-row">
+                                <h4>Rotisería QR</h4>
+                                <span class="card-num">01</span>
+                            </div>
+                            <p class="card-desc">
+                                Sistema de gestión para rotisería con pedidos por QR: toma de pedidos en salón, cocina,
+                                caja y modo pantalla para la TV del local, todo con acceso por roles.
+                            </p>
+                            <ul class="tags"><li>JavaScript</li><li>Node.js</li><li>Acceso por roles</li></ul>
+
+                            <div class="creds">
+                                <button class="creds-btn" aria-expanded="false" aria-controls="creds-01">
+                                    <i class="fa-solid fa-key"></i> Credenciales de acceso <i class="fa-solid fa-chevron-down chev"></i>
+                                </button>
+                                <div class="creds-panel" id="creds-01" hidden>
+                                    <ul class="cred-list">
+                                        <li><span class="cred-role">Admin</span><code>admin@rotiseria.com</code><code>Admin2026</code><button class="copy-btn" data-copy="admin@rotiseria.com / Admin2026">Copiar</button></li>
+                                        <li><span class="cred-role">Cajero</span><code>cajero@rotiseria.com</code><code>Cajero2026</code><button class="copy-btn" data-copy="cajero@rotiseria.com / Cajero2026">Copiar</button></li>
+                                        <li><span class="cred-role">Cocina</span><code>cocina@rotiseria.com</code><code>Cocina2026</code><button class="copy-btn" data-copy="cocina@rotiseria.com / Cocina2026">Copiar</button></li>
+                                        <li><span class="cred-role">TV</span><code>tv@gmail.com</code><code>tv1234</code><button class="copy-btn" data-copy="tv@gmail.com / tv1234">Copiar</button></li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <div class="card-actions">
+                                <a class="btn btn-repo" href="https://github.com/sebasbel2007/Rotiseria_QR_Final" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-github"></i> Ver repositorio</a>
+                                <a class="btn btn-app" href="https://rotiseria-qr-final.onrender.com" target="_blank" rel="noopener noreferrer"><i class="fa-solid fa-arrow-up-right-from-square"></i> Probar app</a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <aside class="note-tile reveal">
+                        <span class="note-icon"><i class="fa-solid fa-circle-info"></i></span>
+                        <h4>¿Por qué a veces tarda?</h4>
+                        <p>
+                            Las apps de Render se duermen tras un rato sin uso. Si entras por primera vez en el día,
+            espérate unos segundos: el servidor se está levantando. Después cargan normal.
+                        </p>
+                        <span class="note-foot">Aplica a las 3 apps con servidor</span>
+                    </aside>
+
+                    <div class="family reveal" data-family="cursos">
+                        <div class="family-head">
+                            <span class="family-icon"><i class="fa-solid fa-link"></i></span>
+                            <div>
+                                <strong>Plataforma Cursos SyM</strong>
+                                <small>El sistema y su documentación van juntos</small>
+                            </div>
+                            <span class="family-count">2 proyectos</span>
+                        </div>
+                        <div class="family-grid">
+
+                            <article class="card" data-cat="servidor" data-search="plataforma cursos sym inscripciones alumnos autenticacion javascript node backend">
+                                <div class="card-media">
+                                    <img src="./img%20app/Plataforma-cursos.png" alt="Captura de la Plataforma de Cursos SyM" loading="lazy">
+                                    <span class="host-badge host-render"><i class="fa-solid fa-server"></i> Render</span>
+                                    <button class="zoom-btn" aria-label="Ampliar imagen de Plataforma de Cursos"><i class="fa-solid fa-expand"></i></button>
+                                </div>
+                                <div class="card-body">
+                                    <div class="card-title-row">
+                                        <h4>Plataforma de Cursos SyM</h4>
+                                        <span class="card-num">02</span>
+                                    </div>
+                                    <p class="card-desc">
+                                        Plataforma para administrar cursos: alta de cursos, inscripciones de alumnos y
+                                        seguimiento, con autenticación de usuarios.
+                                    </p>
+                                    <ul class="tags"><li>JavaScript</li><li>Node.js</li><li>App web</li></ul>
+
+                                    <div class="creds">
+                                        <button class="creds-btn" aria-expanded="false" aria-controls="creds-02">
+                                            <i class="fa-solid fa-key"></i> Credenciales de acceso <i class="fa-solid fa-chevron-down chev"></i>
+                                        </button>
+                                        <div class="creds-panel" id="creds-02" hidden>
+                                            <ul class="cred-list">
+                                                <li><span class="cred-role">Usuario</span><code>cuervo@gmail.com</code><code>123456</code><button class="copy-btn" data-copy="cuervo@gmail.com / 123456">Copiar</button></li>
+                                                <li><span class="cred-role">Admin</span><code>admin@gmail.com</code><code>666666</code><button class="copy-btn" data-copy="admin@gmail.com / 666666">Copiar</button></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+
+                                    <div class="card-actions">
+                                        <a class="btn btn-repo" href="https://github.com/sebasbel2007/Plataforma_Cursos_SyM" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-github"></i> Ver repositorio</a>
+                                        <a class="btn btn-app" href="https://plataforma-cursos-sym.onrender.com" target="_blank" rel="noopener noreferrer"><i class="fa-solid fa-arrow-up-right-from-square"></i> Probar app</a>
+                                    </div>
+                                </div>
+                            </article>
+
+                            <article class="card" data-cat="estaticos" data-search="diagrama casos de uso uml documentacion cursos sym github pages">
+                                <div class="card-media">
+                                    <img src="./img%20app/Diagrama-de-casos-de-uso-Plataforma-de-Cursos.png" alt="Diagrama de casos de uso de la Plataforma de Cursos SyM" loading="lazy">
+                                    <span class="host-badge host-static"><i class="fa-brands fa-github"></i> GitHub Pages</span>
+                                    <button class="zoom-btn" aria-label="Ampliar imagen del diagrama de casos de uso"><i class="fa-solid fa-expand"></i></button>
+                                </div>
+                                <div class="card-body">
+                                    <div class="card-title-row">
+                                        <h4>Diagrama de casos de uso</h4>
+                                        <span class="card-num">03</span>
+                                    </div>
+                                    <p class="card-desc">
+                                        Documentación UML de la plataforma: diagrama de casos de uso detallado con actores,
+                                        módulos y relaciones.
+                                    </p>
+                                    <ul class="tags"><li>UML</li><li>Documentación</li><li>HTML</li></ul>
+                                    <p class="no-creds"><i class="fa-solid fa-unlock-keyhole"></i> No requiere cuenta</p>
+
+                                    <div class="card-actions">
+                                        <a class="btn btn-repo" href="https://github.com/sebasbel2007/Diagrama-de-casos-de-uso-Plataforma-de-Cursos-SyM" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-github"></i> Ver repositorio</a>
+                                        <a class="btn btn-app" href="https://sebasbel2007.github.io/Diagrama-de-casos-de-uso-Plataforma-de-Cursos-SyM/" target="_blank" rel="noopener noreferrer"><i class="fa-solid fa-arrow-up-right-from-square"></i> Probar app</a>
+                                    </div>
+                                </div>
+                            </article>
+
+                        </div>
+                    </div>
+
+                    <div class="family reveal" data-family="natacion">
+                        <div class="family-head">
+                            <span class="family-icon"><i class="fa-solid fa-link"></i></span>
+                            <div>
+                                <strong>Natación SMI</strong>
+                                <small>La app de gestión y su lista de materiales</small>
+                            </div>
+                            <span class="family-count">2 proyectos</span>
+                        </div>
+                        <div class="family-grid">
+
+                            <article class="card" data-cat="servidor" data-search="natacion smi inscriptos cuotas panel admin gestion javascript node backend">
+                                <div class="card-media">
+                                    <img src="./img%20app/Proyecto-natacion-SMI.png" alt="Captura del Proyecto Natación SMI" loading="lazy">
+                                    <span class="host-badge host-render"><i class="fa-solid fa-server"></i> Render</span>
+                                    <button class="zoom-btn" aria-label="Ampliar imagen del Proyecto Natación SMI"><i class="fa-solid fa-expand"></i></button>
+                                </div>
+                                <div class="card-body">
+                                    <div class="card-title-row">
+                                        <h4>Proyecto Natación SMI</h4>
+                                        <span class="card-num">04</span>
+                                    </div>
+                                    <p class="card-desc">
+                                        Gestión administrativa de la actividad de natación: inscriptos, cuotas y
+                                        seguimiento desde un panel de administrador.
+                                    </p>
+                                    <ul class="tags"><li>JavaScript</li><li>Node.js</li><li>Panel admin</li></ul>
+
+                                    <div class="creds">
+                                        <button class="creds-btn" aria-expanded="false" aria-controls="creds-04">
+                                            <i class="fa-solid fa-key"></i> Credenciales de acceso <i class="fa-solid fa-chevron-down chev"></i>
+                                        </button>
+                                        <div class="creds-panel" id="creds-04" hidden>
+                                            <ul class="cred-list">
+                                                <li><span class="cred-role">Admin</span><code>admin@gmail.com</code><code>admin1234</code><button class="copy-btn" data-copy="admin@gmail.com / admin1234">Copiar</button></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+
+                                    <div class="card-actions">
+                                        <a class="btn btn-repo" href="https://github.com/sebasbel2007/Proyecto-Natacion-SMI" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-github"></i> Ver repositorio</a>
+                                        <a class="btn btn-app" href="https://proyecto-natacion-smi.onrender.com" target="_blank" rel="noopener noreferrer"><i class="fa-solid fa-arrow-up-right-from-square"></i> Probar app</a>
+                                    </div>
+                                </div>
+                            </article>
+
+                            <article class="card" data-cat="estaticos" data-search="lista de materiales natacion insumos documento github pages">
+                                <div class="card-media">
+                                    <img src="./img%20app/Lista-de-materiales-proyecto-natacion.png" alt="Lista de materiales del proyecto de natación" loading="lazy">
+                                    <span class="host-badge host-static"><i class="fa-brands fa-github"></i> GitHub Pages</span>
+                                    <button class="zoom-btn" aria-label="Ampliar imagen de la lista de materiales"><i class="fa-solid fa-expand"></i></button>
+                                </div>
+                                <div class="card-body">
+                                    <div class="card-title-row">
+                                        <h4>Lista de materiales</h4>
+                                        <span class="card-num">05</span>
+                                    </div>
+                                    <p class="card-desc">
+                                        Listado de materiales e insumos necesarios para el proyecto de natación,
+                                        presentado en una vista clara y consultable.
+                                    </p>
+                                    <ul class="tags"><li>HTML</li><li>Documento</li><li>Gestión</li></ul>
+                                    <p class="no-creds"><i class="fa-solid fa-unlock-keyhole"></i> No requiere cuenta</p>
+
+                                    <div class="card-actions">
+                                        <a class="btn btn-repo" href="https://github.com/sebasbel2007/Lista-de-materiales-proyecto-natacion" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-github"></i> Ver repositorio</a>
+                                        <a class="btn btn-app" href="https://sebasbel2007.github.io/Lista-de-materiales-proyecto-natacion/" target="_blank" rel="noopener noreferrer"><i class="fa-solid fa-arrow-up-right-from-square"></i> Probar app</a>
+                                    </div>
+                                </div>
+                            </article>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ---------- ESTÁTICOS (GITHUB PAGES / NETLIFY) ---------- -->
+            <div class="proj-block" id="estaticos" data-block>
+                <header class="block-head reveal">
+                    <div class="block-head-text">
+                        <p class="block-kicker"><span class="nav-dot nav-dot--static"></span> Estáticos</p>
+                        <h3>Github Pages y Netlify</h3>
+                        <p>Sin servidor ni base de datos propia: archivos estáticos servidos desde GitHub Pages o Netlify. Cargan al instante y no se duermen.</p>
+                    </div>
+                    <span class="block-count" data-block-count>4 proyectos</span>
+                </header>
+
+                <div class="grid grid-2">
+                    <article class="card reveal" data-cat="estaticos" data-search="firebase notas firestore nube html css javascript app web">
+                        <div class="card-media">
+                            <img src="./img%20app/Firebase-notas.png" alt="Captura de la app de notas con Firebase" loading="lazy">
+                            <span class="host-badge host-static"><i class="fa-brands fa-github"></i> GitHub Pages</span>
+                            <button class="zoom-btn" aria-label="Ampliar imagen de Firebase Notas"><i class="fa-solid fa-expand"></i></button>
+                        </div>
+                        <div class="card-body">
+                            <div class="card-title-row">
+                                <h4>Firebase Notas</h4>
+                                <span class="card-num">06</span>
+                            </div>
+                            <p class="card-desc">
+                                App de notas con Firebase Firestore, hecha con HTML, CSS y JavaScript puros:
+                                crear, editar y organizar notas en la nube.
+                            </p>
+                            <ul class="tags"><li>JavaScript</li><li>Firebase</li><li>App web</li></ul>
+                            <p class="no-creds"><i class="fa-solid fa-unlock-keyhole"></i> No requiere cuenta</p>
+
+                            <div class="card-actions">
+                                <a class="btn btn-repo" href="https://github.com/sebasbel2007/firebase-notas" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-github"></i> Ver repositorio</a>
+                                <a class="btn btn-app" href="https://sebasbel2007.github.io/firebase-notas/" target="_blank" rel="noopener noreferrer"><i class="fa-solid fa-arrow-up-right-from-square"></i> Probar app</a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="card reveal" data-cat="estaticos" data-search="nexo destinos vuelos reserva netlify busqueda destinos app web">
+                        <div class="card-media">
+                            <img src="./img%20app/App_reservar_vuelos.png" alt="Captura de la app de reserva de vuelos Nexo Destinos" loading="lazy">
+                            <span class="host-badge host-netlify"><i class="fa-solid fa-bolt"></i> Netlify</span>
+                            <button class="zoom-btn" aria-label="Ampliar imagen de Nexo Destinos"><i class="fa-solid fa-expand"></i></button>
+                        </div>
+                        <div class="card-body">
+                            <div class="card-title-row">
+                                <h4>Nexo Destinos — Reservar vuelos</h4>
+                                <span class="card-num">07</span>
+                            </div>
+                            <p class="card-desc">
+                                Reserva de vuelos online: buscador de destinos y flujo de reserva completo,
+                                con una interfaz pensada para terminar la operación en pocos pasos.
+                            </p>
+                            <ul class="tags"><li>JavaScript</li><li>App web</li><li>Equipo</li></ul>
+                            <p class="no-creds"><i class="fa-solid fa-unlock-keyhole"></i> No requiere cuenta</p>
+
+                            <div class="card-actions">
+                                <a class="btn btn-repo" href="https://github.com/jjclassroomnico/Nexo-Destinos" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-github"></i> Ver repositorio</a>
+                                <a class="btn btn-app" href="https://nexodestinos.netlify.app/" target="_blank" rel="noopener noreferrer"><i class="fa-solid fa-arrow-up-right-from-square"></i> Probar app</a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <div class="family reveal" data-family="preceptora">
+                        <div class="family-head">
+                            <span class="family-icon"><i class="fa-solid fa-link"></i></span>
+                            <div>
+                                <strong>Sistema de la Jefa Preceptora</strong>
+                                <small>El sistema y su manual de uso van juntos</small>
+                            </div>
+                            <span class="family-count">2 proyectos</span>
+                        </div>
+                        <div class="family-grid">
+
+                            <article class="card" data-cat="estaticos" data-search="sistema jefa preceptora 4.0 guardias partes alumnos gestion html javascript">
+                                <div class="card-media">
+                                    <img src="./img%20app/Sistema-Jefa-Preceptora.png" alt="Captura del Sistema de la Jefa Preceptora" loading="lazy">
+                                    <span class="host-badge host-static"><i class="fa-brands fa-github"></i> GitHub Pages</span>
+                                    <button class="zoom-btn" aria-label="Ampliar imagen del Sistema de la Jefa Preceptora"><i class="fa-solid fa-expand"></i></button>
+                                </div>
+                                <div class="card-body">
+                                    <div class="card-title-row">
+                                        <h4>Sistema Jefa Preceptora 4.0</h4>
+                                        <span class="card-num">08</span>
+                                    </div>
+                                    <p class="card-desc">
+                                        Sistema para la jefa de preceptores: organiza el día a día del turno con registro de
+                                        novedades, partes diarios y seguimiento de alumnos.
+                                    </p>
+                                    <ul class="tags"><li>HTML</li><li>JavaScript</li><li>App web</li></ul>
+
+                                    <div class="creds">
+                                        <button class="creds-btn" aria-expanded="false" aria-controls="creds-08">
+                                            <i class="fa-solid fa-key"></i> Credenciales de acceso <i class="fa-solid fa-chevron-down chev"></i>
+                                        </button>
+                                        <div class="creds-panel" id="creds-08" hidden>
+                                            <ul class="cred-list">
+                                                <li><span class="cred-role">Admin</span><code>admin@preceptora.com</code><code>admin1234</code><button class="copy-btn" data-copy="admin@preceptora.com / admin1234">Copiar</button></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+
+                                    <div class="card-actions">
+                                        <a class="btn btn-repo" href="https://github.com/sebasbel2007/Sistema-Jefa-Preceptora-4.0" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-github"></i> Ver repositorio</a>
+                                        <a class="btn btn-app" href="https://sebasbel2007.github.io/Sistema-Jefa-Preceptora-4.0/" target="_blank" rel="noopener noreferrer"><i class="fa-solid fa-arrow-up-right-from-square"></i> Probar app</a>
+                                    </div>
+                                </div>
+                            </article>
+
+                            <article class="card" data-cat="estaticos" data-search="manual de uso sistema preceptora guia documentacion pasos github pages">
+                                <div class="card-media">
+                                    <img src="./img%20app/Manual-de-uso-Sistema-Preceptora.png" alt="Captura del manual de uso del Sistema Preceptora" loading="lazy">
+                                    <span class="host-badge host-static"><i class="fa-brands fa-github"></i> GitHub Pages</span>
+                                    <button class="zoom-btn" aria-label="Ampliar imagen del manual de uso"><i class="fa-solid fa-expand"></i></button>
+                                </div>
+                                <div class="card-body">
+                                    <div class="card-title-row">
+                                        <h4>Manual de uso — Sistema Preceptora</h4>
+                                        <span class="card-num">09</span>
+                                    </div>
+                                    <p class="card-desc">
+                                        Manual de uso del Sistema de la Jefa Preceptora: guía paso a paso de cada módulo
+                                        para quienes lo usan a diario.
+                                    </p>
+                                    <ul class="tags"><li>HTML</li><li>Documentación</li><li>Guía</li></ul>
+                                    <p class="no-creds"><i class="fa-solid fa-unlock-keyhole"></i> No requiere cuenta</p>
+
+                                    <div class="card-actions">
+                                        <a class="btn btn-repo" href="https://github.com/sebasbel2007/Manual-de-uso-Sistema-Preceptora" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-github"></i> Ver repositorio</a>
+                                        <a class="btn btn-app" href="https://sebasbel2007.github.io/Manual-de-uso-Sistema-Preceptora/" target="_blank" rel="noopener noreferrer"><i class="fa-solid fa-arrow-up-right-from-square"></i> Probar app</a>
+                                    </div>
+                                </div>
+                            </article>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ---------- PERSONALES + VIEJOS ---------- -->
+            <div class="proj-block" id="personales" data-block>
+                <header class="block-head reveal">
+                    <div class="block-head-text">
+                        <p class="block-kicker"><span class="nav-dot nav-dot--personal"></span> Personales</p>
+                        <h3>Proyectos propios y primeros pasos</h3>
+                        <p>Los que nacieron por iniciativa propia: para aprender, resolver algo propio o simplemente por ganas de construir.</p>
+                    </div>
+                    <span class="block-count" data-block-count>5 proyectos</span>
+                </header>
+
+                <div class="grid grid-2">
+                    <article class="card reveal" data-cat="personales" data-search="app meditar respirar ansiedad pwa pin javascript">
+                        <div class="card-media">
+                            <img src="./img%20app/App-Meditar.png" alt="Captura de la App Meditar" loading="lazy">
+                            <span class="host-badge host-static"><i class="fa-brands fa-github"></i> GitHub Pages</span>
+                            <button class="zoom-btn" aria-label="Ampliar imagen de App Meditar"><i class="fa-solid fa-expand"></i></button>
+                        </div>
+                        <div class="card-body">
+                            <div class="card-title-row">
+                                <h4>App Meditar</h4>
+                                <span class="card-num">10</span>
+                            </div>
+                            <p class="card-desc">
+                                PWA para meditar y respirar: sesiones guiadas para bajar la ansiedad,
+                                con acceso protegido por cuenta y PIN.
+                            </p>
+                            <ul class="tags"><li>PWA</li><li>JavaScript</li><li>Firebase</li></ul>
+
+                            <div class="creds">
+                                <button class="creds-btn" aria-expanded="false" aria-controls="creds-10">
+                                    <i class="fa-solid fa-key"></i> Credenciales de acceso <i class="fa-solid fa-chevron-down chev"></i>
+                                </button>
+                                <div class="creds-panel" id="creds-10" hidden>
+                                    <ul class="cred-list">
+                                        <li><span class="cred-role">Usuario</span><code>usuario2@gmail.com</code><code>usuario1234</code><button class="copy-btn" data-copy="usuario2@gmail.com / usuario1234">Copiar</button></li>
+                                        <li><span class="cred-role">PIN de la app</span><code>—</code><code>1234</code><button class="copy-btn" data-copy="1234">Copiar</button></li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <div class="card-actions">
+                                <a class="btn btn-repo" href="https://github.com/sebasbel2007/app-meditar" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-github"></i> Ver repositorio</a>
+                                <a class="btn btn-app" href="https://sebasbel2007.github.io/app-meditar/" target="_blank" rel="noopener noreferrer"><i class="fa-solid fa-arrow-up-right-from-square"></i> Probar app</a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="card reveal" data-cat="personales" data-search="juego matias silicon valley aventura misiones javascript juego web">
+                        <div class="card-media">
+                            <img src="./img%20app/Juego-Matias.png" alt="Captura del juego Silicon Valley" loading="lazy">
+                            <span class="host-badge host-static"><i class="fa-brands fa-github"></i> GitHub Pages</span>
+                            <button class="zoom-btn" aria-label="Ampliar imagen del Juego Matias"><i class="fa-solid fa-expand"></i></button>
+                        </div>
+                        <div class="card-body">
+                            <div class="card-title-row">
+                                <h4>Juego Matias — Silicon Valley</h4>
+                                <span class="card-num">11</span>
+                            </div>
+                            <p class="card-desc">
+                                Juego web hecho en JavaScript: aventura con misiones, puntos y progreso
+                                guardado en el navegador.
+                            </p>
+                            <ul class="tags"><li>JavaScript</li><li>Juego web</li><li>Lógica</li></ul>
+                            <p class="no-creds"><i class="fa-solid fa-unlock-keyhole"></i> No requiere cuenta</p>
+
+                            <div class="card-actions">
+                                <a class="btn btn-repo" href="https://github.com/sebasbel2007/juego-silicon-valley" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-github"></i> Ver repositorio</a>
+                                <a class="btn btn-app" href="https://sebasbel2007.github.io/juego-silicon-valley/" target="_blank" rel="noopener noreferrer"><i class="fa-solid fa-arrow-up-right-from-square"></i> Probar app</a>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+
+                <h4 class="sub-block-title reveal" id="viejos"><span>Proyectos viejos</span> Los primeros, incluidos acá</h4>
+
+                <div class="grid grid-3">
+                    <article class="card reveal" data-cat="viejos" data-search="museo louvre lelouvre reserva turnos accesibilidad">
+                        <div class="card-media">
+                            <img src="./img%20app/museo.png" alt="Captura del sitio Museo del Louvre" loading="lazy">
+                            <span class="host-badge host-static"><i class="fa-brands fa-github"></i> GitHub Pages</span>
+                            <button class="zoom-btn" aria-label="Ampliar imagen del museo"><i class="fa-solid fa-expand"></i></button>
+                        </div>
+                        <div class="card-body">
+                            <div class="card-title-row">
+                                <h4>Museo Le Louvre</h4>
+                                <span class="card-num">12</span>
+                            </div>
+                            <p class="card-desc">
+                                Sitio de reserva de turnos con foco en accesibilidad: contenidos adaptados y
+                                una reserva autónoma y sencilla.
+                            </p>
+                            <ul class="tags"><li>HTML</li><li>Accesibilidad</li><li>Reservas</li></ul>
+                            <p class="no-creds"><i class="fa-solid fa-unlock-keyhole"></i> No requiere cuenta</p>
+
+                            <div class="card-actions">
+                                <a class="btn btn-repo" href="https://github.com/sebasbel2007/Le-Louvre" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-github"></i> Ver repositorio</a>
+                                <a class="btn btn-app" href="https://sebasbel2007.github.io/Le-Louvre/" target="_blank" rel="noopener noreferrer"><i class="fa-solid fa-arrow-up-right-from-square"></i> Probar app</a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="card reveal" data-cat="viejos" data-search="voley tienda ecommerce carrito facturas html php mysql">
+                        <div class="card-media">
+                            <img src="./img%20app/voley.png" alt="Captura de la tienda de voley" loading="lazy">
+                            <span class="host-badge host-static"><i class="fa-brands fa-github"></i> GitHub Pages</span>
+                            <button class="zoom-btn" aria-label="Ampliar imagen de la tienda de voley"><i class="fa-solid fa-expand"></i></button>
+                        </div>
+                        <div class="card-body">
+                            <div class="card-title-row">
+                                <h4>Tienda de Voley</h4>
+                                <span class="card-num">13</span>
+                            </div>
+                            <p class="card-desc">
+                                E-commerce con carrito dinámico y generación automática de facturas: de elegir
+                                el producto hasta cerrar la venta.
+                            </p>
+                            <ul class="tags"><li>HTML</li><li>Carrito</li><li>E-commerce</li></ul>
+                            <p class="no-creds"><i class="fa-solid fa-unlock-keyhole"></i> No requiere cuenta</p>
+
+                            <div class="card-actions">
+                                <a class="btn btn-repo" href="https://github.com/sebasbel2007/tienda-de-voley" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-github"></i> Ver repositorio</a>
+                                <a class="btn btn-app" href="https://sebasbel2007.github.io/tienda-de-voley/" target="_blank" rel="noopener noreferrer"><i class="fa-solid fa-arrow-up-right-from-square"></i> Probar app</a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="card reveal" data-cat="viejos" data-search="vuelos sistema python escritorio asientos pago comprobantes">
+                        <div class="card-media">
+                            <img src="./img%20app/vuelo.png" alt="Captura del sistema de vuelos en Python" loading="lazy">
+                            <span class="host-badge host-desktop"><i class="fa-solid fa-desktop"></i> Escritorio</span>
+                            <button class="zoom-btn" aria-label="Ampliar imagen del sistema de vuelos"><i class="fa-solid fa-expand"></i></button>
+                        </div>
+                        <div class="card-body">
+                            <div class="card-title-row">
+                                <h4>Sistema de Vuelos (Python)</h4>
+                                <span class="card-num">14</span>
+                            </div>
+                            <p class="card-desc">
+                                Software de escritorio en Python para gestionar vuelos: asignación de asientos,
+                                métodos de pago y comprobantes automáticos.
+                            </p>
+                            <ul class="tags"><li>Python</li><li>Tkinter</li><li>Escritorio</li></ul>
+                            <p class="no-creds no-creds--info"><i class="fa-solid fa-circle-info"></i> Corre en tu equipo, no tiene versión web</p>
+
+                            <div class="card-actions">
+                                <a class="btn btn-repo" href="https://github.com/sebasbel2007/sistema-de-vuelos" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-github"></i> Ver repositorio</a>
+                                <span class="btn btn-app is-disabled" aria-disabled="true" title="Aplicación de escritorio en Python: no tiene link web"><i class="fa-solid fa-desktop"></i> Solo escritorio</span>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </div>
+
+            <div class="empty-state" id="emptyState" hidden>
+                <i class="fa-solid fa-magnifying-glass"></i>
+                <h4>No encontré proyectos con ese filtro</h4>
+                <p>Probá con otro término o limpiá los filtros para ver los 14.</p>
+                <button class="btn btn-outline" id="resetFilters">Ver todos los proyectos</button>
+            </div>
+        </section>
+
+        <!-- ============================ CONTACTO ============================ -->
+        <section id="contacto" class="section">
+            <header class="section-head reveal">
+                <p class="section-kicker">Contacto</p>
+                <h2 class="section-title">¿Trabajamos <em>juntos?</em></h2>
+                <p class="section-lead">
+                    Estoy disponible para proyectos freelance y posiciones junior.
+                    Si buscás lógica sólida y cosas que funcionen, escribime.
+                </p>
+            </header>
+
+            <div class="contact-grid">
+                <ul class="contact-list reveal">
+                    <li>
+                        <span class="contact-icon"><i class="fa-solid fa-envelope"></i></span>
+                        <div class="contact-data">
+                            <span>Email</span>
+                            <a href="mailto:sebastianbeltranbedoya@gmail.com">sebastianbeltranbedoya@gmail.com</a>
+                        </div>
+                        <button class="copy-btn" data-copy="sebastianbeltranbedoya@gmail.com">Copiar</button>
+                    </li>
+                    <li>
+                        <span class="contact-icon"><i class="fa-brands fa-whatsapp"></i></span>
+                        <div class="contact-data">
+                            <span>WhatsApp</span>
+                            <a href="https://wa.me/5491136433699" target="_blank" rel="noopener noreferrer">+54 11 3643-3699</a>
+                        </div>
+                        <button class="copy-btn" data-copy="+54 11 3643-3699">Copiar</button>
+                    </li>
+                    <li>
+                        <span class="contact-icon"><i class="fa-solid fa-location-dot"></i></span>
+                        <div class="contact-data">
+                            <span>Ubicación</span>
+                            <p>Berazategui, Buenos Aires</p>
+                        </div>
+                    </li>
+                    <li>
+                        <span class="contact-icon"><i class="fa-brands fa-linkedin-in"></i></span>
+                        <div class="contact-data">
+                            <span>LinkedIn</span>
+                            <a href="https://www.linkedin.com/in/sebastian-beltran-44b551401/" target="_blank" rel="noopener noreferrer">sebastian-beltran-44b551401</a>
+                        </div>
+                    </li>
+                </ul>
+
+                <div class="contact-actions reveal">
+                    <a class="action-card" href="mailto:sebastianbeltranbedoya@gmail.com?subject=Proyecto%20para%20tu%20portfolio">
+                        <span class="action-icon"><i class="fa-solid fa-paper-plane"></i></span>
+                        <span class="action-text"><strong>Escribime un email</strong><small>Respuesta en menos de 24 h</small></span>
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </a>
+                    <a class="action-card" href="https://wa.me/5491136433699?text=Hola%20Sebastian,%20vi%20tu%20portfolio" target="_blank" rel="noopener noreferrer">
+                        <span class="action-icon"><i class="fa-brands fa-whatsapp"></i></span>
+                        <span class="action-text"><strong>WhatsApp directo</strong><small>Para hablar ahora mismo</small></span>
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </a>
+                    <a class="action-card" href="https://www.linkedin.com/in/sebastian-beltran-44b551401/" target="_blank" rel="noopener noreferrer">
+                        <span class="action-icon"><i class="fa-brands fa-linkedin-in"></i></span>
+                        <span class="action-text"><strong>Conectemos en LinkedIn</strong><small>Per profesional y trayectoria</small></span>
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </a>
+                    <a class="action-card" href="./img/CV_Sebastian_Beltran_2026.pdf" download>
+                        <span class="action-icon"><i class="fa-solid fa-file-lines"></i></span>
+                        <span class="action-text"><strong>Descargar CV 2026</strong><small>PDF actualizado</small></span>
+                        <i class="fa-solid fa-arrow-down"></i>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <footer class="footer">
+            <div class="footer-brand">
+                <div>
+                    <strong>Sebastian Beltran</strong>
+                    <small>Desarrollador Full Stack · Berazategui, AR</small>
+                </div>
+            </div>
+            <div class="footer-socials">
+                <a href="https://github.com/sebasbel2007" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+                <a href="https://www.linkedin.com/in/sebastian-beltran-44b551401/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+                <a href="https://www.instagram.com/sebastian_l07/" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+            </div>
+            <p class="footer-copy">© 2026 Sebastian Beltran · Todos los derechos reservados</p>
+        </footer>
+    </main>
+
+    <!-- ============================ LIGHTBOX ============================ -->
+    <div class="lightbox" id="lightbox" hidden>
+        <div class="lightbox-backdrop" data-close></div>
+        <figure class="lightbox-figure">
+            <button class="lightbox-close" data-close aria-label="Cerrar imagen"><i class="fa-solid fa-xmark"></i></button>
+            <img id="lightboxImg" alt="">
+            <figcaption id="lightboxCap"></figcaption>
+        </figure>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

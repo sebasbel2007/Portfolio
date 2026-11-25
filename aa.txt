@@ -1,0 +1,29 @@
+
+                    Mi enfoque en el desarrollo no está en la superficie, sino en el <span>motor que hace que las cosas sucedan</span>. 
+                    Soy un apasionado de la lógica pura, la estructuración de algoritmos complejos y la integridad de los datos. 
+                    Como técnico, disfruto resolver desafíos donde la eficiencia del procesamiento y la seguridad de la información son la prioridad.
+                </p>
+                <p>
+                    Me especializo en el desarrollo de <strong>Backend (PHP/MySQL)</strong> y en el <strong>análisis de datos con Python</strong>. 
+                    Mi diferencial es la precisión técnica: prefiero optimizar una consulta SQL o estructurar una jerarquía de clases antes que trabajar en interfaces visuales.
+                </p>
+            </div>
+
+            <div class="trayectoria-card">
+                <i class="fas fa-chart-line"></i>
+                <h3>Trayectoria</h3>
+                <p>Cuento con más de 3 años de formación constante en diversas áreas de la programación y la electrónica. A lo largo de este camino, he desarrollado 4 proyectos de gran escala que pusieron a prueba mi capacidad para integrar hardware y software. Mi fuerte no es solo escribir código, sino entender profundamente la lógica detrás de cada sistema para garantizar que la solución sea técnica y operativamente sólida.</p>
+            </div>
+
+            <div class="trayectoria-card">
+                <i class="fas fa-graduation-cap"></i>
+                <h3>Estudios</h3>
+                <p>Actualmente curso el 7mo año en la Escuela de Educación Secundaria Técnica N°5</p><br>
+                <p>He complementado mi formación técnica con certificaciones y cursos enfocados en las tecnologías esenciales del mercado: HTML & CSS Moderno para interfaces, Lógica de Programación con Python, y gestión de bases de datos relacionales con MySQL y PHP.</p>
+            </div>
+
+            <div class="trayectoria-card">
+                <i class="fas fa-microchip"></i>
+                <h3>Habilidades Clave</h3>
+                <p>Control de Hardware (Arduino Mega) <br><br> Lógica de Backend (PHP/Python/MySQL)<br><br> UI/UX y Storytelling técnico <br><br> Colaboración y Sinergia <br><br>  Gestión bajo Presión <br><br> Adaptabilidad exelente</p>
+            </div>

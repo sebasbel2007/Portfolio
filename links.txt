@@ -1,0 +1,113 @@
+RENDER-------------------------------------------------------------------------------------
+
+
+Rotiseria qr 
+REPO: https://github.com/sebasbel2007/Rotiseria_QR_Final.git
+app: Rotiseria-qr-final.onrender.com
+
+credenciales: 
+admin@rotiseria.com / Admin2026
+cajero@rotiseria.com / Cajero2026
+cocina@rotiseria.com / Cocina2026
+tv@gmail.com         / tv1234
+
+
+----------
+Plataformas Cursos:
+Repo: https://github.com/sebasbel2007/Plataforma_Cursos_SyM.git
+App: https://plataforma-cursos-sym.onrender.com
+
+Credenciales:
+cuervo@gmail.com / 123456
+admin@gmail.com / 666666
+
+
+
+
+Diagrama-de-casos-de-uso-Plataforma-de-Cursos-SyM:
+Repo: https://github.com/sebasbel2007/Diagrama-de-casos-de-uso-Plataforma-de-Cursos-SyM.git
+App: https://sebasbel2007.github.io/Diagrama-de-casos-de-uso-Plataforma-de-Cursos-SyM/
+Credenciales: no necesita
+
+
+----------
+
+Proyecto Natacion SMI ----------------------------
+
+Proyecto natacion SMI:
+Repo: https://github.com/sebasbel2007/Proyecto-Natacion-SMI.git
+App : https://proyecto-natacion-smi.onrender.com
+
+credenciales: 
+admin@gmail.com / admin1234
+
+
+Lista-de-materiales-proyecto-natacion:
+Repo:https://github.com/sebasbel2007/Lista-de-materiales-proyecto-natacion.git
+App: https://sebasbel2007.github.io/Lista-de-materiales-proyecto-natacion/
+Credenciales: no necesita
+
+
+
+Github Pages:---------------------------------------------------------------------------------
+
+
+
+Firebase notas:
+Repo:https://github.com/sebasbel2007/firebase-notas.git
+app: https://sebasbel2007.github.io/firebase-notas/
+Credenciales: no necesita
+
+----------
+
+Sistema-Jefa-Preceptora: 
+Repo: https://github.com/sebasbel2007/Sistema-Jefa-Preceptora-4.0.git
+App: https://sebasbel2007.github.io/Sistema-Jefa-Preceptora-4.0/
+Credenciales: admin@preceptora.com / admin1234
+
+Manual-de-uso-Sistema-Preceptora:
+Repo:https://github.com/sebasbel2007/Manual-de-uso-Sistema-Preceptora.git
+App: https://sebasbel2007.github.io/Manual-de-uso-Sistema-Preceptora/
+Credenciales: no necesita
+----------
+
+
+App reservar vuelos:
+Repo: https://github.com/jjclassroomnico/Nexo-Destinos.git
+App:https://nexodestinos.netlify.app/
+
+
+
+
+--------------------------------------------------------------------------------
+Proyectos Personales:
+
+App Meditar:
+Repo: https://github.com/sebasbel2007/app-meditar.git
+app: https://sebasbel2007.github.io/app-meditar/
+Credenciales: usuario2@gmail.com / usuario1234 / Pin app: 1234
+
+Juego Matias:
+Repo: https://github.com/sebasbel2007/juego-silicon-valley.git
+App: https://sebasbel2007.github.io/juego-silicon-valley/
+Credenciales: no necesita
+
+------------------------------------------------------------------------------------------
+Proyectos viejos:
+museo:
+Repo: https://github.com/sebasbel2007/Le-Louvre.git
+App: https://sebasbel2007.github.io/Le-Louvre/
+Credenciales: no necesita
+
+Voley: 
+Repo: https://github.com/sebasbel2007/tienda-de-voley.git
+App: https://sebasbel2007.github.io/tienda-de-voley/
+Credenciales: no necesita
+
+vuelo: 
+Repo: https://github.com/sebasbel2007/sistema-de-vuelos.git
+App: no tiene es python
+Credenciales: no necesita
+----------
+
+
