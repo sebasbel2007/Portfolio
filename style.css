@@ -1078,7 +1078,9 @@ button { font-family: inherit; }
 }
 .btn-app:hover { background: var(--accent-2); border-color: var(--accent-2); }
 .btn-app.is-disabled,
-.btn-app[aria-disabled="true"] {
+.btn-app[aria-disabled="true"],
+.btn-repo.is-disabled,
+.btn-repo[aria-disabled="true"] {
     background: transparent;
     border: 1px dashed var(--line-2);
     color: var(--muted);

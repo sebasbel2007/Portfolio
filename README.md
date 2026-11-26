@@ -7,7 +7,7 @@ Sitio estático, sin dependencias ni pasos de build: HTML + CSS + JavaScript.
 
 ## Qué contiene
 
-- **14 proyectos** con repositorio y app en vivo (13 apps web + 1 app de escritorio).
+- **15 proyectos** con app en vivo (14 apps web + 1 app de escritorio); 14 repositorios públicos y 1 privado (proyecto final con datos sensibles).
 - Sidebar de navegación con scrollspy, buscador y filtros por sección.
 - Credenciales de las apps de demostración incluidas en cada tarjeta.
 - CV 2026 en PDF descargable.
@@ -17,7 +17,7 @@ Sitio estático, sin dependencias ni pasos de build: HTML + CSS + JavaScript.
 
 | Sección | Proyectos |
 | --- | --- |
-| **Con servidor** (Render) | Rotiseria QR · Plataforma de Cursos + diagrama · Natacion SMI + lista de materiales |
+| **Con servidor** (Render) | Rotiseria QR · Plataforma de Cursos + diagrama · Natacion SMI + lista de materiales · S.A.D (proyecto final, repo privado) |
 | **Estaticos** (GitHub Pages / Netlify) | Firebase Notas · Nexo Destinos · Sistema Preceptora + manual |
 | **Personales** (+ proyectos viejos) | App Meditar · Juego Matias · Museo · Voley · Sistema de Vuelos (Python) |
 
