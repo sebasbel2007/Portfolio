@@ -1063,6 +1063,7 @@ button { font-family: inherit; }
     gap: 7px;
     white-space: nowrap;
 }
+.card-actions--three .btn:last-child { grid-column: 1 / -1; }
 
 .btn-repo {
     background: transparent;
